@@ -26,37 +26,38 @@ then calculating and checking their difference
   ![leemedcirc1](https://github.com/user-attachments/assets/dc574c6c-790f-498f-87f5-9db0540f66a2)
 
   In Online compiler :
-l1=[1,1,0,0,1]
-size=len(l1)
+ 
+     l1=[1,1,0,0,1]
+    size=len(l1)
 
-def getindices(lst,el):
-    tlist=[index for index,value in enumerate(lst) if value==el]
-    return tlist
+    def getindices(lst,el):
+        tlist=[index for index,value in enumerate(lst) if value==el]
+        return tlist
     
-iclist=getindices(l1,1)
-print(iclist)
+    iclist=getindices(l1,1)
+    print(iclist)
 
-def calc_swap(l2):
-    swapc=0
-    totalc=[]
-    n=len(l2)
-    if(l2[0]==0 and l2[-1]==n-1):
-        initdiff=2
-    else:
-        initdiff=1
-    totalc=[]
-    for i in range(len(l2)-initdiff):
-        j=i+1
-        diff=l2[j]-l2[i]
-        if(diff<=1):
-            pass
-        elif(diff>=2):
-            swapc=diff-1
-            totalc.append(swapc)
-    return totalc
+    def calc_swap(l2):
+        swapc=0
+        totalc=[]
+        n=len(l2)
+        if(l2[0]==0 and l2[-1]==n-1):
+            initdiff=2
+        else:
+            initdiff=1
+        totalc=[]
+        for i in range(len(l2)-initdiff):
+            j=i+1
+            diff=l2[j]-l2[i]
+            if(diff<=1):
+                pass
+            elif(diff>=2):
+                swapc=diff-1
+                totalc.append(swapc)
+        return totalc
 
-print(calc_swap(iclist))
-print(sum(calc_swap(iclist)))
+    print(calc_swap(iclist))
+    print(sum(calc_swap(iclist)))
 
 [Problem Description]
 (https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii/?envType=daily-question&envId=2024-08-02)
